@@ -1,0 +1,72 @@
+{% extends './layouts/base-login-register.html' %}
+
+
+{% block title %} Login {% endblock %}
+
+{% block conteudo %}
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="../static/img/img-02.jpeg" alt="IMG">
+				</div>
+
+				<form class="login100-form" method="post">
+					{{ form.csrf_token }}
+					<!-- TITULO -->
+					<span class="login100-form-title">
+						Login
+					</span>
+					<!-- CAMPO E-MAIL -->
+					{% if vLogin==False %}
+						<div class="alert alert-danger" role="alert">
+							E-mail ou senha incorreto!
+						</div>
+					{% endif %}
+					<div class="wrap-input100">
+						<!-- <input class="input100" type="text" name="email" placeholder="E-mail"> -->
+						{{ form.email(class="input100", placeholder="E-mail") }}
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-envelope" aria-hidden="true"></i>
+						</span>
+					</div>
+					<!-- CAMPO SENHA -->
+					<div class="wrap-input100">
+						<!-- <input class="input100" type="text" name="senha" placeholder="Senha"> -->
+						{{ form.password(class="input100", placeholder="Senha") }}
+						<span class="focus-input100"></span>
+						<span class="symbol-input100">
+							<i class="fa fa-lock" aria-hidden="true"></i>
+						</span>
+					</div>
+					<!-- BOTÃO ENTRAR -->
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Login
+						</button>
+					</div>
+
+				<!--<div class="text-center p-t-12">
+						<span class="txt1">
+							Esqueceu seu
+						</span>
+						<a class="txt2" href="#">
+							Usuário\Senha?
+						</a>
+					</div> -->
+
+					<!-- CRIE UMA CONTA -->
+					<div class="text-center p-t-136">
+						<a class="txt2" href="register">
+							Crie uma conta
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
