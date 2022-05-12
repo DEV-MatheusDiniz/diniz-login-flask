@@ -9,7 +9,7 @@ from app.authentication.models import Users
 
 
 #ROTA RAIZ
-@app.route("/")
+@app.route("/", methods=['GET', 'POST'])
 def index():
     return redirect('login')
 
