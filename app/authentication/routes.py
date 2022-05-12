@@ -12,10 +12,6 @@ from app.authentication.models import Users
 @app.route("/", methods=['GET', 'POST'])
 def index():
     return redirect('login')
-    
-@app.route("/diniz-login-flask.git", methods=['GET', 'POST'])
-def index():
-    return redirect('login')
 
 
 #ROTA LOGIN
